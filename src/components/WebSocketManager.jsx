@@ -41,3 +41,7 @@ export const useWebSocketManager = (url) => {
     const [manager] = useState(() => new WebSocketManager(url));
     return manager;
 };
+
+// Made by, Berk Ocal
+// Linkedin: https://www.linkedin.com/in/berkocall/
+// Github: https://github.com/Pippenpethalopsocopolis
