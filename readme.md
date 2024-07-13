@@ -39,6 +39,7 @@ useEffect(() => {
         webSocketManager.addListener('chat', handleMessage); // Write the messageType you wrote when you sended message to the websocket server through sendMessage function
         return () => {
             webSocketManager.removeListener('chat', handleMessage); // You can use this function for cleanups.
+            webSocketManager.closeConnection();
         };
     }
 }, [webSocketManager]);
