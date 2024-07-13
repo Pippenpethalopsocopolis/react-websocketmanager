@@ -56,3 +56,5 @@ const handleKeyPress = (event) => {
 `addListener(messageType, callback)` With this function, add your messageType when you used sendMessage function and add callback(The function to be called when a message of the specified type is received.). Goal of this function is to add a listener for a specific message type.
 
 `removeListener(messageType, callback)` Same rules applied to addListener applies to removeListener. Goal of this function is to remove a listener for a specific message type. It is usually used for cleanups of effect hooks.
+
+`closeConnection()` Simply close the connection. It is usually used for cleanups of effect hooks.
