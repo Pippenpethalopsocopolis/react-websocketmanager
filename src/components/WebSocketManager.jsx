@@ -34,6 +34,11 @@ class WebSocketManager {
     sendMessage(message) {
         this.socket.send(JSON.stringify(message));
     }
+
+    // Close the WebSocket connection.
+    closeConnection() {
+        this.socket.close();
+    }
 }
 
 // Custom hook to create and use the WebSocket manager in components.
