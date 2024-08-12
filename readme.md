@@ -52,6 +52,8 @@ const handleKeyPress = (event) => {
 
 ### Functions
 
+`useWebSocketManager("ws://localhost:3000")` Create a websocket connection. Edit the string part as whatever your localhost is.
+
 `sendMessage({message, messageType})` With this function, you can send message to your WebSocket server. Remember to specify what kind of message you send through messageType
 
 `addListener(messageType, callback)` With this function, add your messageType when you used sendMessage function and add callback(The function to be called when a message of the specified type is received.). Goal of this function is to add a listener for a specific message type.
