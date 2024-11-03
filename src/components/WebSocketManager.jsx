@@ -42,9 +42,14 @@ class WebSocketManager {
 }
 
 // Custom hook to create and use the WebSocket manager in components.
-export const useWebSocketManager = (url) => {
-    const [manager] = useState(() => new WebSocketManager(url));
-    return manager;
+export const useWebSocketManager = (url, authentication) => {
+    if(authentication) {
+        const [manager] = useState(() => new WebSocketManager(url));
+        return manager;
+    }
+    else {
+        return undefined;
+    }
 };
 
 // Made by, Berk Ocal
