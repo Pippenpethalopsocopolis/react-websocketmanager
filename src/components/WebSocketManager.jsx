@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 class WebSocketManager {
     constructor(url) {
@@ -42,9 +42,20 @@ class WebSocketManager {
 }
 
 // Custom hook to create and use the WebSocket manager in components.
-export const useWebSocketManager = (url) => {
-    const [manager] = useState(() => new WebSocketManager(url));
+export const useWebSocketManager = (url, authentication) => {    
+    const [manager, setManager] = useState(null);
+
+    useEffect(() => {
+        if (authentication) {
+            const webSocketManager = new WebSocketManager(url);
+            setManager(webSocketManager);
+        } else {
+            setManager(null);
+        }
+    }, [url, authentication]);
+
     return manager;
+
 };
 
 // Made by, Berk Ocal

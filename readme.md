@@ -16,7 +16,8 @@ npm install react-websocketmanager
 import React, { useState, useEffect, useCallback } from 'react';
 import { useWebSocketManager } from 'react-websocketmanager';
 
-const webSocketManager = useWebSocketManager("ws://localhost:8080"); // Get the WebSocket manager instance
+// Get the WebSocket manager instance and give authentication variable
+const webSocketManager = useWebSocketManager("ws://localhost:8080", authentication);
 
 const [messages, setMessages] = useState([]);
 const [newMessage, setNewMessage] = useState('');
@@ -52,7 +53,7 @@ const handleKeyPress = (event) => {
 
 ### Functions
 
-`useWebSocketManager("ws://localhost:3000")` Create a websocket connection. Edit the string part as whatever your localhost is.
+`useWebSocketManager("ws://localhost:3000", authentication)` Create a websocket connection. Edit the string part as whatever your localhost is. authentication should be a variable that contains a boolean value so that there will be no unnecessary websocket request and server wont tire itself with unnecessary websocket requests.
 
 `sendMessage({message, messageType})` With this function, you can send message to your WebSocket server. Remember to specify what kind of message you send through messageType
 
